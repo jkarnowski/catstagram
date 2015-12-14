@@ -37,13 +37,16 @@ app.controller('CatController', ['$scope', '$http', function($scope, $http){
 
 	$scope.comments = [
 	{
-		"message": "such a cutie"
+		"comment": "such a cutie",
+		"author" : "Santa Cat"
 	},
 	{
-		"message": "adorbs"
+		"comment": "adorbs",
+		"author" : "CatsBMine"
 	},
 	{
-		"message": "fluffer nutter"
+		"comment": "fluffer nutter",
+		"author" : "Wiry and Scandalous"
 	}
 	]
 

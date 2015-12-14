@@ -18,7 +18,7 @@
             <form class="form-inline post-container">
                 <input ng-model="newCat.title" placeholder="Title" id="title" class="form-control"/>
                 <input ng-model="newCat.url" placeholder="Url" class="form-control"/>
-                <p>{{ newCat.title }} {{newCat.url}}</p>
+                <p>{{ newCat.title }}</p>
                 <button ng-click="addCat(newCat)" class="btn btn-success">Submit</button>
             </form>
 
@@ -26,17 +26,14 @@
                 <div class="title">
                     <h1>{{ cat.title }}</h1>
                     <!-- $index refers to the current index in the cats array. cat = cats[$index] -->
-                    <p>{{ cat.likes }} <span ng-click="like($index)">like</span></p>
+                    <p>{{ cat.likes }} <span ng-click="like($index)" class="glyphicon glyphicon-heart">like</span></p>
                 </div>
                 <img src="{{cat.url}}"/>
                 <!-- <input ng-model="newComment" placeholder="Comment" class="form-control"/> -->
                 <form ng-submit="submitComment(comment.text)">
                     <input ng-model="cat.comment" placeholder="Write a comment..." class="form-control" rows="3" ng-mouseenter="submitComment(comment.text)"/>
                 </form>
-
-                <div class="comments" ng-repeat="message in comments">{{ message.message }}</div>
-
-
+                <div class="comments" ng-repeat="comment in comments">{{ comment.comment }}, written by {{ comment.author }}</div>
             </div>
         </div>
     </body>
